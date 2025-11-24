@@ -8,8 +8,9 @@ from typing import Iterable
 
 import duckdb
 
-BASE_DIR = Path(__file__).resolve().parents[1]
-DATA_DIR = BASE_DIR / "data"
+APP_DIR = Path(__file__).resolve().parents[1]
+PROJECT_ROOT = APP_DIR.parent
+DATA_DIR = PROJECT_ROOT / "data"
 DEFAULT_DB_PATH = DATA_DIR / "tasktracker.duckdb"
 
 SCHEMA_STATEMENTS: tuple[str, ...] = (
