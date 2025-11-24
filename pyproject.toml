@@ -1,0 +1,20 @@
+[project]
+name = "tasktracking"
+version = "0.1.0"
+description = "Single-user task tracking dashboard for staged ML learning roadmap"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "duckdb",
+    "jinja2",
+    "python-multipart",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "httpx",
+    "anyio",
+]

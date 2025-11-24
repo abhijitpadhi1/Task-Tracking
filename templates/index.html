@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task Tracking Dashboard</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Task Tracking Dashboard</h1>
+      <div class="header-meta">
+        <div class="overall-progress">
+          <span>Total Progress</span>
+          <strong id="overall-progress-value">0%</strong>
+        </div>
+        <div class="floating-actions">
+          <button
+            class="icon-button"
+            data-panel-trigger="dashboard-panel"
+            aria-label="Open dashboard summary"
+          >
+            <span class="icon">📊</span>
+          </button>
+          <button
+            class="icon-button"
+            data-panel-trigger="coding-panel"
+            aria-label="Open coding checklist"
+          >
+            <span class="icon">✅</span>
+          </button>
+          <button
+            class="icon-button"
+            data-panel-trigger="links-panel"
+            aria-label="View submitted links"
+          >
+            <span class="icon">🔗</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="app-shell">
+      <aside class="stage-nav">
+        <h2>Stages & Repos</h2>
+        <ul id="stage-list"></ul>
+      </aside>
+
+      <main class="content">
+        <section class="repo-details">
+          <header>
+            <h2 id="repo-title">Select a repository</h2>
+            <p id="repo-description">
+              Choose a repository from the left panel to see its checklist.
+            </p>
+          </header>
+          <ul id="task-list" class="task-list"></ul>
+        </section>
+      </main>
+    </div>
+
+    <div id="panel-overlay" class="panel-overlay"></div>
+
+    <div id="dashboard-panel" class="slideout-panel">
+      <button class="close-panel" aria-label="Close dashboard">×</button>
+      <h3>Dashboard</h3>
+      <div class="dashboard-cards">
+        <article class="card">
+          <h4>Stage Progress</h4>
+          <div id="stage-progress"></div>
+        </article>
+        <article class="card">
+          <h4>Repository Summary</h4>
+          <div id="repo-progress"></div>
+        </article>
+      </div>
+    </div>
+
+    <div id="coding-panel" class="slideout-panel">
+      <button class="close-panel" aria-label="Close coding checklist">
+        ×
+      </button>
+      <h3>✅ Coding Checklist</h3>
+      <div id="coding-checklist"></div>
+    </div>
+
+    <div id="links-panel" class="slideout-panel">
+      <button class="close-panel" aria-label="Close submitted links">×</button>
+      <h3>🔗 Submitted Links</h3>
+      <div id="links-list"></div>
+    </div>
+
+    <script type="module" src="/static/js/main.js"></script>
+  </body>
+</html>
+
